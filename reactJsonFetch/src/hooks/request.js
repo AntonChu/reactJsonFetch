@@ -4,7 +4,7 @@ export const useRequest = (url, initialData) => {
   const [data, setData] = useState(initialData);
   const [isLoading, setLoading] = useState(false);
   const [hasError, setError] = useState();
-  const [targetUrl, setUrl] = useState(url)
+  // const [targetUrl, setUrl] = useState(url)
   // console.log('initial', data, isLoading, hasError);
 
   useEffect(() => {
@@ -28,7 +28,6 @@ export const useRequest = (url, initialData) => {
     };
 
     fetchData();
-    console.log('end', data, isLoading, hasError);
-    return [ data, isLoading, hasError ];
-  }, [url]);
+  }, []);
+  return [ data, isLoading, hasError ];
 };

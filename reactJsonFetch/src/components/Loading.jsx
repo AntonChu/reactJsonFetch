@@ -2,10 +2,11 @@ import { useRequest } from "../hooks/request";
 
 export const Loading = ({ url, initialData }) => {
   const [ data, isLoading, hasError ] = useRequest(url, initialData);
+  console.log(isLoading)
 
   return (
     <>
-      <div>{isLoading}</div>
+      {isLoading && <div>{isLoading}</div>}
     </>
   )
 };
